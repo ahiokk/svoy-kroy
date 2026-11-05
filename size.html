@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Подобрать размер джинсов. Свой крой</title>
+<meta name="description" content="Таблица размеров мужских джинсов «Свой крой Base» и подбор размера по обхвату талии и росту.">
+<link rel="stylesheet" href="style.css">
+<!-- METRIKA -->
+<script src="app.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="index.html">Свой <span>крой</span></a>
+    <nav class="nav">
+      <a href="index.html">Каталог</a>
+      <a class="on" href="size.html">Подобрать размер</a>
+      <a href="contacts.html">Контакты и доставка</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section>
+    <h1 style="font-size:38px;margin:0 0 10px">Подобрать размер</h1>
+    <p style="color:var(--muted);font-size:17px;max-width:640px;margin:0 0 28px">Размер джинсов это обхват талии в дюймах. Сверьтесь с таблицей или заполните форму, и сайт подскажет размер и длину.</p>
+    <div class="grid2">
+      <table class="sz">
+        <tr><th>Размер (W)</th><th>Обхват талии, см</th><th>Российский размер</th></tr>
+        <tr><td>28</td><td>71–73</td><td>44</td></tr>
+        <tr><td>29</td><td>74–76</td><td>44–46</td></tr>
+        <tr><td>30</td><td>77–78</td><td>46</td></tr>
+        <tr><td>31</td><td>79–81</td><td>46–48</td></tr>
+        <tr><td>32</td><td>82–83</td><td>48</td></tr>
+        <tr><td>33</td><td>84–86</td><td>48–50</td></tr>
+        <tr><td>34</td><td>87–88</td><td>50</td></tr>
+        <tr><td>36</td><td>92–93</td><td>52</td></tr>
+        <tr><td>38</td><td>97–98</td><td>54</td></tr>
+      </table>
+      <form class="pick">
+        <label>Обхват талии, см
+          <input name="waist" type="number" min="60" max="120" placeholder="Например, 82" required>
+        </label>
+        <label>Рост, см
+          <input name="height" type="number" min="150" max="210" placeholder="Например, 178">
+        </label>
+        <label>Какую посадку любите
+          <select name="fit"><option>Как в таблице</option><option>Чуть свободнее</option><option>Плотнее</option></select>
+        </label>
+        <button class="btn" type="submit">Подобрать размер</button>
+        <div class="ok"></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 «Свой крой». <span class="edu">Учебный прототип сайта для дисциплины «Управление цифровым бизнесом», РЭУ им. Г.В. Плеханова. Товар не продаётся.</span></div>
+    <div><a href="contacts.html">Контакты</a>&nbsp;&nbsp;&nbsp;<a href="privacy.html">Политика обработки данных</a></div>
+  </div>
+</footer>
+<div class="cookie">
+  <p>Мы используем cookie и сервис Яндекс Метрика, чтобы понимать, как посетители пользуются сайтом. Подробнее в <a href="privacy.html">политике обработки данных</a>.</p>
+  <button class="btn" type="button">Понятно</button>
+</div>
+</body>
+</html>
