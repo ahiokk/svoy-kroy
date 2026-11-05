@@ -38,11 +38,22 @@ document.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
       goal('size_form');
       var waist = parseFloat(f.waist.value) || 0;
-      var size = waist ? Math.round(waist / 2.54) : '';
+      var height = parseFloat(f.height.value) || 0;
+      // верхние границы обхвата талии из таблицы размеров
+      var table = [[73, 28], [76, 29], [78, 30], [81, 31], [83, 32], [86, 33], [88, 34], [93, 36], [98, 38]];
+      var size = null;
+      for (var i = 0; i < table.length; i++) {
+        if (waist <= table[i][0]) { size = table[i][1]; break; }
+      }
       var ok = document.querySelector('.ok');
-      ok.textContent = size
-        ? 'Вам подойдёт размер ' + size + '. Длину 32 берут при росте до 180 см, 34 при росте выше.'
-        : 'Спасибо! Укажите обхват талии, и мы подскажем размер.';
+      if (!waist) {
+        ok.textContent = 'Укажите обхват талии, и мы подскажем размер.';
+      } else if (!size) {
+        ok.textContent = 'Такого размера пока нет в линейке, напишите нам в чат магазина.';
+      } else {
+        var len = height ? (height <= 180 ? 32 : 34) : null;
+        ok.textContent = 'Вам подойдёт размер ' + size + (len ? ', длина ' + len + '.' : '. Длину 32 берут при росте до 180 см, 34 при росте выше.');
+      }
       ok.style.display = 'block';
     });
   }
